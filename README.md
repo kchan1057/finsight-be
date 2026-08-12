@@ -2,7 +2,6 @@
 
 > 관심 기업의 뉴스·활동을 자동으로 수집하고 AI가 요약·분류해 "요즘 이 회사 동향"으로 보여주는 기업분석 큐레이션 서비스
 >
-> *(내부 코드명: `bizradar`)*
 
 ![Java](https://img.shields.io/badge/Java-21-orange)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-4.1.0-6DB33F)
@@ -43,18 +42,7 @@
 
 ## 아키텍처
 
-```mermaid
-flowchart LR
-    G["스케줄러<br/>(예정)"] -.-> A
-    subgraph 구현["수집 · 저장 (구현 완료)"]
-        A["NewsSource<br/>NAVER 뉴스 API"] --> B["정제 · URL 정규화<br/>SHA-256 해시"]
-        B --> C["MyBatis<br/>INSERT IGNORE"]
-        C --> D[("MySQL<br/>trend_item")]
-    end
-    D -.->|예정| E["AI 요약 · 분류"]
-    E -.->|예정| F["동향 조회 API"]
-    F -.->|예정| H["웹 / PWA"]
-```
+![FinSight 아키텍처](docs/architecture.svg)
 
 **설계 포인트**
 - **어댑터 패턴** — `NewsSource` 인터페이스 뒤에 네이버 구현체를 숨겨, 데이터 소스가 바뀌어도(예: 콘솔 이관) 구현체만 교체하면 된다.
