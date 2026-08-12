@@ -1,0 +1,112 @@
+<svg viewBox="0 0 1280 640" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="FinSight 시스템 아키텍처">
+  <defs>
+    <marker id="ar" markerWidth="10" markerHeight="10" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L7,3.2 L0,6.4 Z" fill="#1f8a70"/>
+    </marker>
+    <marker id="arg" markerWidth="10" markerHeight="10" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L7,3.2 L0,6.4 Z" fill="#8b98a4"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1280" height="640" fill="#ffffff"/>
+
+  <g font-family="'Noto Sans KR','Apple SD Gothic Neo','Malgun Gothic','Segoe UI',sans-serif">
+
+    <!-- Header -->
+    <text x="44" y="50" font-size="27" font-weight="700" fill="#12324f">FinSight · 시스템 아키텍처</text>
+    <text x="46" y="76" font-size="14" fill="#6b7680">관심 기업 뉴스를 수집·정제해 중복 없이 저장 — 이후 AI 요약·제공은 예정</text>
+
+    <!-- Legend -->
+    <rect x="1000" y="38" width="24" height="15" rx="3" fill="#e7f3ee" stroke="#1f8a70" stroke-width="1.5"/>
+    <text x="1031" y="50" font-size="13" fill="#1d2733">구현 완료</text>
+    <rect x="1000" y="60" width="24" height="15" rx="3" fill="#f4f6f8" stroke="#9fb0bd" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="1031" y="72" font-size="13" fill="#1d2733">예정</text>
+
+    <!-- ================= TOP BAND : 구현 완료 ================= -->
+    <rect x="32" y="100" width="1216" height="228" rx="16" fill="#eef6f2" stroke="#cbe3d9" stroke-width="1.5"/>
+    <text x="54" y="130" font-size="15" font-weight="700" fill="#1f8a70">① 수집 · 저장 파이프라인 — 구현 완료</text>
+
+    <!-- flow arrows (solid) at y=243 -->
+    <line x1="252" y1="243" x2="305" y2="243" stroke="#1f8a70" stroke-width="2" marker-end="url(#ar)"/>
+    <line x1="491" y1="243" x2="544" y2="243" stroke="#1f8a70" stroke-width="2" marker-end="url(#ar)"/>
+    <line x1="730" y1="243" x2="783" y2="243" stroke="#1f8a70" stroke-width="2" marker-end="url(#ar)"/>
+    <line x1="969" y1="243" x2="1032" y2="243" stroke="#1f8a70" stroke-width="2" marker-end="url(#ar)"/>
+
+    <!-- Card 1 -->
+    <rect x="72" y="196" width="180" height="94" rx="11" fill="#ffffff" stroke="#d5dee6" stroke-width="1.5"/>
+    <rect x="72" y="196" width="6" height="94" rx="3" fill="#1f8a70"/>
+    <text x="162" y="234" font-size="15" font-weight="700" fill="#12324f" text-anchor="middle">NAVER 뉴스 API</text>
+    <text x="162" y="257" font-size="11.5" fill="#6b7680" text-anchor="middle">외부 · API HUB</text>
+
+    <!-- Card 2 -->
+    <rect x="311" y="196" width="180" height="94" rx="11" fill="#ffffff" stroke="#d5dee6" stroke-width="1.5"/>
+    <rect x="311" y="196" width="6" height="94" rx="3" fill="#1f8a70"/>
+    <text x="401" y="234" font-size="15" font-weight="700" fill="#12324f" text-anchor="middle">수집 · 어댑터</text>
+    <text x="401" y="257" font-size="11.5" fill="#6b7680" text-anchor="middle">NewsSource · 정제</text>
+
+    <!-- Card 3 -->
+    <rect x="550" y="196" width="180" height="94" rx="11" fill="#ffffff" stroke="#d5dee6" stroke-width="1.5"/>
+    <rect x="550" y="196" width="6" height="94" rx="3" fill="#1f8a70"/>
+    <text x="640" y="234" font-size="15" font-weight="700" fill="#12324f" text-anchor="middle">정규화 · 해시</text>
+    <text x="640" y="257" font-size="11.5" fill="#6b7680" text-anchor="middle">URL 정규화 · SHA-256</text>
+
+    <!-- Card 4 -->
+    <rect x="789" y="196" width="180" height="94" rx="11" fill="#ffffff" stroke="#d5dee6" stroke-width="1.5"/>
+    <rect x="789" y="196" width="6" height="94" rx="3" fill="#1f8a70"/>
+    <text x="879" y="234" font-size="15" font-weight="700" fill="#12324f" text-anchor="middle">저장</text>
+    <text x="879" y="257" font-size="11.5" fill="#6b7680" text-anchor="middle">MyBatis · INSERT IGNORE</text>
+
+    <!-- DB cylinder -->
+    <ellipse cx="1118" cy="282" rx="80" ry="13" fill="#0d2740"/>
+    <rect x="1038" y="200" width="160" height="82" fill="#12324f"/>
+    <ellipse cx="1118" cy="200" rx="80" ry="13" fill="#1c476b"/>
+    <text x="1118" y="238" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">MySQL</text>
+    <text x="1118" y="258" font-size="11" fill="#cfe0ec" text-anchor="middle">trend_item · company</text>
+    <text x="1118" y="312" font-size="10.5" fill="#1f8a70" text-anchor="middle">UNIQUE(url_hash) → 중복 차단</text>
+
+    <!-- ================= BOTTOM BAND : 예정 ================= -->
+    <rect x="32" y="372" width="1216" height="236" rx="16" fill="#f4f6f8" stroke="#cdd6de" stroke-width="1.5"/>
+    <text x="54" y="402" font-size="15" font-weight="700" fill="#6b7680">② 처리 · 제공 — 예정</text>
+
+    <!-- planned dashed arrows -->
+    <!-- DB -> AI : down then left then down -->
+    <path d="M1118,295 L1118,344 L640,344 L640,432" fill="none" stroke="#8b98a4" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arg)"/>
+    <!-- Scheduler -> 수집(card2) : up then right then up -->
+    <path d="M162,436 L162,352 L401,352 L401,292" fill="none" stroke="#8b98a4" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arg)"/>
+    <text x="250" y="345" font-size="10.5" fill="#8b98a4" text-anchor="middle">주기 실행</text>
+    <!-- AI -> 조회API -->
+    <line x1="730" y1="488" x2="783" y2="488" stroke="#8b98a4" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arg)"/>
+    <!-- 조회API -> PWA -->
+    <line x1="969" y1="488" x2="1022" y2="488" stroke="#8b98a4" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arg)"/>
+    <!-- 결제 -> 조회API (권한) along bottom -->
+    <path d="M401,544 L401,570 L879,570 L879,544" fill="none" stroke="#8b98a4" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arg)"/>
+    <text x="640" y="565" font-size="10.5" fill="#8b98a4" text-anchor="middle">구독 등급 → 열람 권한</text>
+
+    <!-- Planned cards (dashed) -->
+    <!-- P1 스케줄러 -->
+    <rect x="72" y="436" width="180" height="98" rx="11" fill="#ffffff" stroke="#9fb0bd" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="162" y="476" font-size="15" font-weight="700" fill="#48555f" text-anchor="middle">스케줄러</text>
+    <text x="162" y="499" font-size="11.5" fill="#8b98a4" text-anchor="middle">@Scheduled 자동 수집</text>
+
+    <!-- P2 결제 -->
+    <rect x="311" y="436" width="180" height="98" rx="11" fill="#ffffff" stroke="#9fb0bd" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="401" y="476" font-size="15" font-weight="700" fill="#48555f" text-anchor="middle">구독 결제</text>
+    <text x="401" y="499" font-size="11.5" fill="#8b98a4" text-anchor="middle">PG · 상태머신</text>
+
+    <!-- P3 AI -->
+    <rect x="550" y="436" width="180" height="98" rx="11" fill="#ffffff" stroke="#9fb0bd" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="640" y="476" font-size="15" font-weight="700" fill="#48555f" text-anchor="middle">AI 요약 · 분류</text>
+    <text x="640" y="499" font-size="11.5" fill="#8b98a4" text-anchor="middle">RabbitMQ 큐 · Redis</text>
+
+    <!-- P4 조회 API -->
+    <rect x="789" y="436" width="180" height="98" rx="11" fill="#ffffff" stroke="#9fb0bd" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="879" y="476" font-size="15" font-weight="700" fill="#48555f" text-anchor="middle">동향 조회 API</text>
+    <text x="879" y="499" font-size="11.5" fill="#8b98a4" text-anchor="middle">커서 페이징</text>
+
+    <!-- P5 PWA -->
+    <rect x="1028" y="436" width="180" height="98" rx="11" fill="#ffffff" stroke="#9fb0bd" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="1118" y="476" font-size="15" font-weight="700" fill="#48555f" text-anchor="middle">React PWA</text>
+    <text x="1118" y="499" font-size="11.5" fill="#8b98a4" text-anchor="middle">설치형 · 푸시</text>
+
+  </g>
+</svg>
