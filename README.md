@@ -42,7 +42,8 @@
 
 ## 아키텍처
 
-![FinSight 아키텍처](docs/architecture.svg)
+<img width="1191" height="593" alt="image" src="https://github.com/user-attachments/assets/3f3f02cb-c2fc-4d46-b96b-44c40605205a" />
+
 
 **설계 포인트**
 - **어댑터 패턴** — `NewsSource` 인터페이스 뒤에 네이버 구현체를 숨겨, 데이터 소스가 바뀌어도(예: 콘솔 이관) 구현체만 교체하면 된다.
