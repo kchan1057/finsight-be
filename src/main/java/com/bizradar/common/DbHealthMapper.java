@@ -1,4 +1,4 @@
-package com.bizradar.common.health;
+package com.bizradar.common;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

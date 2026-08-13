@@ -1,4 +1,4 @@
-package com.bizradar.collect;
+package com.bizradar.trend;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;

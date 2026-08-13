@@ -2,6 +2,9 @@ package com.bizradar.collect;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.bizradar.company.CompanyMapper;
+import com.bizradar.trend.TrendItemMapper;
+import com.bizradar.trend.TrendItemWriter;
 import java.time.OffsetDateTime;
 import java.util.List;
 import org.junit.jupiter.api.Test;
@@ -13,9 +16,12 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class TrendItemWriterTest {
 
-  @Autowired TrendItemWriter writer;
-  @Autowired CompanyMapper companyMapper;
-  @Autowired TrendItemMapper trendItemMapper;
+  @Autowired
+  TrendItemWriter writer;
+  @Autowired
+  CompanyMapper companyMapper;
+  @Autowired
+  TrendItemMapper trendItemMapper;
 
   @Test
   void 추적꼬리만_다른_같은_기사는_한_번만_저장된다() {

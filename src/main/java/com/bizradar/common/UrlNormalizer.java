@@ -1,4 +1,4 @@
-package com.bizradar.collect;
+package com.bizradar.common;
 
 import java.net.URI;
 import java.nio.charset.StandardCharsets;

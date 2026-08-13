@@ -1,4 +1,4 @@
-package com.bizradar.collect;
+package com.bizradar.trend;
 
 import java.time.LocalDateTime;
 

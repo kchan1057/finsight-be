@@ -1,7 +1,8 @@
-package com.bizradar.collect;
+package com.bizradar.trend;
 
+import com.bizradar.collect.RawArticle;
+import com.bizradar.common.UrlNormalizer;
 import java.util.List;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

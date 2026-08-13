@@ -1,5 +1,8 @@
 package com.bizradar.collect;
 
+import com.bizradar.company.CompanyMapper;
+import com.bizradar.trend.TrendItemMapper;
+import com.bizradar.trend.TrendItemWriter;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -14,9 +17,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 class CollectAndSaveTest {
 
   @Autowired NaverNewsSource naverNewsSource;   // Day 2: 수집
-  @Autowired TrendItemWriter writer;            // D3: 저장
-  @Autowired CompanyMapper companyMapper;
-  @Autowired TrendItemMapper trendItemMapper;
+  @Autowired
+  TrendItemWriter writer;            // D3: 저장
+  @Autowired
+  CompanyMapper companyMapper;
+  @Autowired
+  TrendItemMapper trendItemMapper;
 
   @Test
   void 수집해서_저장하고_다시_수집해도_안_늘어난다() {

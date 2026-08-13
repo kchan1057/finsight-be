@@ -1,5 +1,6 @@
-package com.bizradar.collect;
+package com.bizradar.company;
 
+import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
@@ -13,4 +14,7 @@ public interface CompanyMapper {
 
   @Select("SELECT id FROM company WHERE name = #{name}")
   Long findIdByName(@Param("name") String name);
+
+  @Select("SELECT id, name FROM company")
+  List<Company> findAll();
 }

@@ -1,6 +1,6 @@
 package com.bizradar;
 
-import com.bizradar.common.health.DbHealthMapper;
+import com.bizradar.common.DbHealthMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,5 +1,6 @@
 package com.bizradar.collect;
 
+import com.bizradar.common.UrlNormalizer;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
