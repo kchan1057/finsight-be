@@ -1,0 +1,148 @@
+Initialized native services in: C:\Users\김성찬\.gradle\native
+Initialized jansi services in: C:\Users\김성찬\.gradle\native
+The client will now receive all logging from the daemon (pid: 34564). The daemon log file: C:\Users\김성찬\.gradle\daemon\9.5.1\daemon-34564.out.log
+Starting 2nd build in daemon [uptime: 6 mins 20.373 secs, performance: 100%, GC rate: 0.00/s, heap usage: 0% of 512 MiB, non-heap usage: 20% of 384 MiB]
+Using 18 worker leases.
+Operational build model parameters: {cachingModelBuilding=false, configurationCache=false, configurationCacheDisabledReason=null, configurationCacheParallelLoad=false, configurationCacheParallelStore=false, configureOnDemand=false, invalidateCoupledProjects=false, isolatedProjects=false, modelAsProjectDependency=false, modelBuilding=false, parallelModelBuilding=false, parallelProjectConfiguration=false, parallelProjectExecution=false, resilientModelBuilding=false}
+Now considering [C:\Users\김성찬\Desktop\bizradar] as hierarchies to watch
+Watching the file system is configured to be enabled if available
+File system watching is active
+Starting Build
+Settings evaluated using settings file 'C:\Users\김성찬\Desktop\bizradar\settings.gradle'.
+Projects loaded. Root project using build file 'C:\Users\김성찬\Desktop\bizradar\build.gradle'.
+Included projects: [root project 'bizradar']
+
+> Configure project :
+Evaluating root project 'bizradar' using build file 'C:\Users\김성찬\Desktop\bizradar\build.gradle'.
+Resolved plugin [id: 'java']
+Resolved plugin [id: 'org.springframework.boot', version: '4.1.0']
+Resolved plugin [id: 'io.spring.dependency-management', version: '1.1.7']
+Applying dependency management to configuration 'annotationProcessor' in project 'bizradar'
+Applying dependency management to configuration 'apiElements' in project 'bizradar'
+Applying dependency management to configuration 'archives' in project 'bizradar'
+Applying dependency management to configuration 'bootArchives' in project 'bizradar'
+Applying dependency management to configuration 'compileClasspath' in project 'bizradar'
+Applying dependency management to configuration 'compileOnly' in project 'bizradar'
+Applying dependency management to configuration 'default' in project 'bizradar'
+Applying dependency management to configuration 'developmentOnly' in project 'bizradar'
+Applying dependency management to configuration 'implementation' in project 'bizradar'
+Applying dependency management to configuration 'mainSourceElements' in project 'bizradar'
+Applying dependency management to configuration 'productionRuntimeClasspath' in project 'bizradar'
+Applying dependency management to configuration 'runtimeClasspath' in project 'bizradar'
+Applying dependency management to configuration 'runtimeElements' in project 'bizradar'
+Applying dependency management to configuration 'runtimeOnly' in project 'bizradar'
+Applying dependency management to configuration 'testAndDevelopmentOnly' in project 'bizradar'
+Applying dependency management to configuration 'testAnnotationProcessor' in project 'bizradar'
+Applying dependency management to configuration 'testCompileClasspath' in project 'bizradar'
+Applying dependency management to configuration 'testCompileOnly' in project 'bizradar'
+Applying dependency management to configuration 'testImplementation' in project 'bizradar'
+Applying dependency management to configuration 'testResultsElementsForTest' in project 'bizradar'
+Applying dependency management to configuration 'testRuntimeClasspath' in project 'bizradar'
+Applying dependency management to configuration 'testRuntimeOnly' in project 'bizradar'
+All projects evaluated.
+Task name matched 'test'
+Task path ':processResources' matched project ':'
+Task name matched 'processResources'
+Selected primary task 'test' from project :
+Resolving global dependency management for project 'bizradar'
+Excluding [com.google.protobuf:protobuf-java]
+Excluding []
+Excluding []
+Excluding []
+Excluding []
+Excluding []
+Selected primary task 'processResources' from project :
+Tasks to be executed: [task ':compileJava', task ':processResources', task ':classes', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test']
+Tasks that were excluded: []
+Resolve mutations for :compileJava (Thread[#192,Execution worker,5,main]) started.
+:compileJava (Thread[#192,Execution worker,5,main]) started.
+
+> Task :compileJava
+Custom actions are attached to task ':compileJava'.
+Caching disabled for task ':compileJava' because:
+  Build cache is disabled
+Task ':compileJava' is not up-to-date because:
+  Executed with '--rerun-tasks'.
+The input changes require a full rebuild for incremental task ':compileJava'.
+Compilation mode: in-process compilation
+Full recompilation is required because no incremental change information is available. This is usually caused by clean builds or changing compiler arguments.
+Compiling with toolchain 'C:\Users\김성찬\.jdks\jbr-21.0.8'.
+Compiling with JDK Java compiler API.
+Class dependency analysis for incremental compilation took 0.147 secs.
+Created classpath snapshot for incremental compilation in 0.053 secs.
+Resolve mutations for :processResources (Thread[#192,Execution worker,5,main]) started.
+:processResources (Thread[#192,Execution worker,5,main]) started.
+
+> Task :processResources
+Caching disabled for task ':processResources' because:
+  Build cache is disabled
+  Not worth caching
+Task ':processResources' is not up-to-date because:
+  Executed with '--rerun-tasks'.
+Resolve mutations for :classes (Thread[#192,Execution worker,5,main]) started.
+:classes (Thread[#192,Execution worker,5,main]) started.
+
+> Task :classes
+Skipping task ':classes' as it has no actions.
+Resolve mutations for :compileTestJava (Thread[#192,Execution worker,5,main]) started.
+:compileTestJava (Thread[#192,Execution worker,5,main]) started.
+
+> Task :compileTestJava
+Custom actions are attached to task ':compileTestJava'.
+Caching disabled for task ':compileTestJava' because:
+  Build cache is disabled
+Task ':compileTestJava' is not up-to-date because:
+  Executed with '--rerun-tasks'.
+The input changes require a full rebuild for incremental task ':compileTestJava'.
+Compilation mode: in-process compilation
+Full recompilation is required because no incremental change information is available. This is usually caused by clean builds or changing compiler arguments.
+Compiling with toolchain 'C:\Users\김성찬\.jdks\jbr-21.0.8'.
+Compiling with JDK Java compiler API.
+Class dependency analysis for incremental compilation took 0.072 secs.
+Created classpath snapshot for incremental compilation in 0.087 secs.
+Resolve mutations for :processTestResources (Thread[#192,Execution worker,5,main]) started.
+:processTestResources (Thread[#199,Execution worker Thread 8,5,main]) started.
+
+> Task :processTestResources NO-SOURCE
+Skipping task ':processTestResources' as it has no source files and no previous output files.
+Resolve mutations for :testClasses (Thread[#199,Execution worker Thread 8,5,main]) started.
+:testClasses (Thread[#199,Execution worker Thread 8,5,main]) started.
+
+> Task :testClasses
+Skipping task ':testClasses' as it has no actions.
+Resolve mutations for :test (Thread[#199,Execution worker Thread 8,5,main]) started.
+:test (Thread[#199,Execution worker Thread 8,5,main]) started.
+
+> Task :test
+Caching disabled for task ':test' because:
+  Build cache is disabled
+Task ':test' is not up-to-date because:
+  Executed with '--rerun-tasks'.
+Starting process 'Gradle Test Executor 2'. Working directory: C:\Users\김성찬\Desktop\bizradar Command: C:\Users\김성찬\.jdks\jbr-21.0.8\bin\java.exe -Dorg.gradle.internal.worker.tmpdir=C:\Users\김성찬\Desktop\bizradar\build\tmp\test\work @C:\Users\김성찬\.gradle\.tmp\gradle-worker-classpath130475053390712037txt -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=KR -Duser.language=ko -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 2'
+Successfully started process 'Gradle Test Executor 2'
+
+Gradle Test Executor 2 started executing tests.
+Gradle Test Executor 2 finished executing tests.
+
+> Task :test FAILED
+
+SimHashTest > 완전히_다른_제목은_해밍거리가_크다() STANDARD_OUT
+    다른 제목 해밍거리 = 34
+
+SimHashTest > 거의_같은_제목은_해밍거리가_작다() STANDARD_OUT
+    거의 같은 제목 해밍거리 = 9
+
+SimHashTest > 거의_같은_제목은_해밍거리가_작다() FAILED
+    java.lang.AssertionError: 
+    Expecting actual:
+      9
+    to be less than or equal to:
+      3 
+        at com.bizradar.common.SimHashTest.거의_같은_제목은_해밍거리가_작다(SimHashTest.java:16)
+Generating HTML test report...
+Finished generating test html results (0.068 secs) into: C:\Users\김성찬\Desktop\bizradar\build\reports\tests\test
+Finished generating test XML results (0.009 secs) into: C:\Users\김성찬\Desktop\bizradar\build\test-results\test
+
+[Incubating] Problems report is available at: file:///C:/Users/%EA%B9%80%EC%84%B1%EC%B0%AC/Desktop/bizradar/build/reports/problems/problems-report.html
+4 actionable tasks: 4 executed
+Watched directory hierarchies: [C:\Users\김성찬\Desktop\bizradar]

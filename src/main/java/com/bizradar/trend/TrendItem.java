@@ -9,5 +9,6 @@ public record TrendItem(
     LocalDateTime publishedAt, // KST 벽시계 시간
     String source,
     String originUrl,
-    String urlHash
+    String urlHash,
+    Long simhash
 ) {}

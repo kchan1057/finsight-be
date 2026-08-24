@@ -1,7 +1,9 @@
 package com.bizradar.trend;
 
+import java.util.List;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
 @Mapper
@@ -17,4 +19,16 @@ public interface TrendItemMapper {
 
   @Select("SELECT COUNT(*) FROM trend_item WHERE company_id = #{companyId}")
   long countByCompany(long companyId);
+
+  @Select("""
+      SELECT simhash FROM trend_item
+      WHERE company_id = #{companyId}
+        AND simhash IS NOT NULL
+        AND published_at >= DATE_SUB(NOW(), INTERVAL #{days} DAY)
+      """)
+  List<Long> findRecentSimhashes(
+      @Param("companyId") long companyId,
+      @Param("days") int days);
+
+
 }
