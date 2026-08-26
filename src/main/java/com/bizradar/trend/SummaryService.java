@@ -1,6 +1,7 @@
 package com.bizradar.trend;
 
 import com.bizradar.ai.SummaryClient;
+import com.bizradar.ai.SummaryGuard;
 import com.bizradar.ai.SummaryPrompt;
 import org.springframework.stereotype.Service;
 
@@ -29,11 +30,20 @@ public class SummaryService {
         String prompt = SummaryPrompt.of(item.companyName(), item.title(), null);
         String summary = summaryClient.summarize(prompt);
 
+        // 가드레일: AI 결과를 그대로 믿지 않고 검증
+        SummaryGuard.Result check = SummaryGuard.validate(summary, item.title());
+        if (!check.passed()) {
+          trendItemMapper.markSkipped(item.id(), "[검증실패] " + check.reason());
+          continue;                       // 저장하지 않음
+        }
+
         trendItemMapper.updateSummary(item.id(), summary);
         done++;
+
       } catch (Exception e) {
-        // 한 건 실패가 나머지를 막지 않게 (D4에서 배운 격리)
-        trendItemMapper.markFailed(item.id());
+        String reason = "[호출실패] " + e.getClass().getSimpleName() + ": "
+            + (e.getMessage() == null ? "" : e.getMessage());
+        trendItemMapper.markFailed(item.id(), reason.length() > 900 ? reason.substring(0, 900) : reason);
       }
     }
     return done;

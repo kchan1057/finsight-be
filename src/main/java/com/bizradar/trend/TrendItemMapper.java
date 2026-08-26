@@ -21,17 +21,7 @@ public interface TrendItemMapper {
   @Select("SELECT COUNT(*) FROM trend_item WHERE company_id = #{companyId}")
   long countByCompany(long companyId);
 
-  @Select("""
-      SELECT simhash FROM trend_item
-      WHERE company_id = #{companyId}
-        AND simhash IS NOT NULL
-        AND published_at >= DATE_SUB(NOW(), INTERVAL #{days} DAY)
-      """)
-  List<Long> findRecentSimhashes(
-      @Param("companyId") long companyId,
-      @Param("days") int days);
-
-  @Select("""
+   @Select("""
           SELECT t.id, t.title, t.source, c.name AS companyName
           FROM trend_item t JOIN company c ON t.company_id = c.id
           WHERE t.summary_status = 'PENDING'
@@ -47,8 +37,21 @@ public interface TrendItemMapper {
           """)
   int updateSummary(@Param("id") long id, @Param("summary") String summary);
 
-  @Update("UPDATE trend_item SET summary_status = 'FAILED' WHERE id = #{id}")
-  int markFailed(@Param("id") long id);
+  /** 검증 실패 → SKIPPED (재시도 대상 아님). 사유는 summary 컬럼에 기록 */
+  @Update("""
+            UPDATE trend_item
+               SET summary_status = 'SKIPPED', summary = #{reason}
+             WHERE id = #{id}
+            """)
+  int markSkipped(@Param("id") long id, @Param("reason") String reason);
+
+  /** AI 호출 실패 → FAILED (재시도 대상). 사유 기록 */
+  @Update("""
+            UPDATE trend_item
+               SET summary_status = 'FAILED', summary = #{reason}
+             WHERE id = #{id}
+            """)
+  int markFailed(@Param("id") long id, @Param("reason") String reason);
 
   /** 같은 기업의 최근 N일 기사 제목 (유사도 비교 후보). */
   @Select("""
