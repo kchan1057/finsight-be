@@ -49,7 +49,7 @@ public class NaverNewsSource implements NewsSource{
     String json = restClient.get()
                             .uri(u -> u.queryParam("query", query)
                                        .queryParam("display", display)
-                                       .queryParam("sort", "date")
+                                       .queryParam("sort", "sim")
                                        .queryParam("format", "json")
                                        .build())
                             .retrieve()

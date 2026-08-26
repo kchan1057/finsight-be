@@ -50,4 +50,12 @@ public interface TrendItemMapper {
   @Update("UPDATE trend_item SET summary_status = 'FAILED' WHERE id = #{id}")
   int markFailed(@Param("id") long id);
 
+  /** 같은 기업의 최근 N일 기사 제목 (유사도 비교 후보). */
+  @Select("""
+            SELECT title FROM trend_item
+             WHERE company_id = #{companyId}
+               AND published_at >= DATE_SUB(NOW(), INTERVAL #{days} DAY)
+            """)
+  List<String> findRecentTitles(@Param("companyId") long companyId,
+      @Param("days") int days);
 }
